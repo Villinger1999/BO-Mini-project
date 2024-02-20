@@ -1,13 +1,14 @@
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import math
-import matplotlib.cm as cm 
+import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 import os
-print(os.listdir("../input"))
+from data_reading import*
 
-train_data = pd.read_csv("../input/train.csv")
-test_data= pd.read_csv("../input/test.csv")
+train_data = xtrain
+test_data = xtest
+
 #separating labels and pixels
 train_labels=np.array(train_data.loc[:,'label'])
 train_data=np.array(train_data.loc[:,train_data.columns!='label'])
