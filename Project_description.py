@@ -4,4 +4,3 @@
 
 #Data structure description
 ## https://www.kaggle.com/datasets/hojjatk/mnist-dataset?resource=download ##
-
