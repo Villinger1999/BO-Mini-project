@@ -6,35 +6,37 @@ import matplotlib.pyplot as plt
 import os
 from data_reading import*
 
+#separating labels and pixels
+train_labels = np.array(y_train)
+train_data = np.array(x_train)
 
-# train_data = x_train
-# test_data = x_test
+train_data=train_data/train_data.max()
 
-# #separating labels and pixels
-# train_labels=np.array(train_data.loc[:,'label'])
-# train_data=np.array(train_data.loc[:,train_data.columns!='label'])
-# #train_data=train_data/train_data.max()
-
-# #Visualize the input data. Change the index value to visualize the particular index data.
-# index=7;
-# plt.title((train_labels[index]))
-# plt.imshow(train_data[index].reshape(28,28), cmap=cm.binary)
+#Visualize the input data. Change the index value to visualize the particular index data.
+index=7;
+plt.title((train_labels[index]))
+plt.imshow(train_data[index].reshape(28,28), cmap=cm.binary)
 
 print("train data")
+
 y_value=np.zeros((1,10))
 for i in range (10):
     print("occurance of ",i,"=",np.count_nonzero(train_labels==i))
     y_value[0,i-1]= np.count_nonzero(train_labels==i)
+    
+
 y_value=y_value.ravel()
 x_value=[0,1,2,3,4,5,6,7,8,9]
 plt.xlabel('label')
 plt.ylabel('count')
 plt.bar(x_value,y_value,0.7,color='g')
 
+print(train_data.shape)
+
 #converting train_label in one hot encoder representation 
-train_data=np.reshape(train_data,[784,42000])
-train_label=np.zeros((10,42000))
-for col in range (42000):
+train_data=np.reshape(train_data,[784,60000])
+train_label=np.zeros((10,60000))
+for col in range (60000):
     val=train_labels[col]
     for row in range (10):
         if (val==row):
@@ -78,7 +80,7 @@ def sigmoid_backward(dA, cache):
 def softmax_backward(Z,cache):
     Z=cache
     length=10  
-    dZ=np.zeros((42000,10))
+    dZ=np.zeros((60000,10))
     Z=np.transpose(Z)
     for row in range (0,42000):
             den=(np.sum(np.exp(Z[row,:])))*(np.sum(np.exp(Z[row,:])))
@@ -205,6 +207,7 @@ def plot_graph(cost_plot):
     plt.xlabel('iteration')
     plt.ylabel('cost')
     plt.plot(x_value,cost_plot,0.,color='g')
+    plt.show()
 
 
 #defining structure of neural network
