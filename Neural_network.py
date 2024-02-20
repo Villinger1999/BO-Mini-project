@@ -202,12 +202,12 @@ def update_parameters(parameters, grads, learning_rate):
 def plot_graph(cost_plot):
        
     x_value=list(range(1,len(cost_plot)+1))
-    #print(x_value)
-    #print(cost_plot)
+    print(x_value)
+    print(cost_plot)
     plt.xlabel('iteration')
     plt.ylabel('cost')
     plt.plot(x_value,cost_plot,0.,color='g')
-    plt.show()
+    # plt.show()
 
 
 #defining structure of neural network
