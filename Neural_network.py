@@ -6,9 +6,6 @@ import matplotlib.pyplot as plt
 import os
 from data_reading import*
 
-train_data = xtrain
-test_data = xtest
-
 #separating labels and pixels
 train_labels = np.array(y_train)
 train_data = np.array(x_train)
