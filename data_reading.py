@@ -42,7 +42,7 @@ class MnistDataloader(object):
         x_test, y_test = self.read_images_labels(self.test_images_filepath, self.test_labels_filepath)
         return (x_train, y_train),(x_test, y_test)
     
-    import random
+import random
 import matplotlib.pyplot as plt
 
 #
