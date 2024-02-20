@@ -6,18 +6,19 @@ import matplotlib.pyplot as plt
 import os
 from data_reading import*
 
-train_data = xtrain
-test_data = xtest
 
-#separating labels and pixels
-train_labels=np.array(train_data.loc[:,'label'])
-train_data=np.array(train_data.loc[:,train_data.columns!='label'])
-#train_data=train_data/train_data.max()
+# train_data = x_train
+# test_data = x_test
 
-#Visualize the input data. Change the index value to visualize the particular index data.
-index=7;
-plt.title((train_labels[index]))
-plt.imshow(train_data[index].reshape(28,28), cmap=cm.binary)
+# #separating labels and pixels
+# train_labels=np.array(train_data.loc[:,'label'])
+# train_data=np.array(train_data.loc[:,train_data.columns!='label'])
+# #train_data=train_data/train_data.max()
+
+# #Visualize the input data. Change the index value to visualize the particular index data.
+# index=7;
+# plt.title((train_labels[index]))
+# plt.imshow(train_data[index].reshape(28,28), cmap=cm.binary)
 
 print("train data")
 y_value=np.zeros((1,10))

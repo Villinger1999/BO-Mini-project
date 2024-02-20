@@ -6,6 +6,7 @@ from os.path  import join
 #
 # MNIST Data Loader Class
 #
+
 class MnistDataloader(object):
     def __init__(self, training_images_filepath,training_labels_filepath,
                  test_images_filepath, test_labels_filepath):
@@ -41,13 +42,14 @@ class MnistDataloader(object):
         x_train, y_train = self.read_images_labels(self.training_images_filepath, self.training_labels_filepath)
         x_test, y_test = self.read_images_labels(self.test_images_filepath, self.test_labels_filepath)
         return (x_train, y_train),(x_test, y_test)
-    
+  
 import random
 import matplotlib.pyplot as plt
 
 #
 # Set file paths based on added MNIST Datasets
 #
+
 input_path = 'Data'
 training_images_filepath = join(input_path, 'train-images-idx3-ubyte/train-images-idx3-ubyte')
 training_labels_filepath = join(input_path, 'train-labels-idx1-ubyte/train-labels-idx1-ubyte')
