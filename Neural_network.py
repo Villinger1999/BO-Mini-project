@@ -4,10 +4,10 @@ import math
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 import os
-from data_reading import*
+from data_reading import *
 
-train_data = xtrain
-test_data = xtest
+train_data = x_train
+test_data = x_test
 
 #separating labels and pixels
 train_labels=np.array(train_data.loc[:,'label'])
