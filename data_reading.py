@@ -74,7 +74,7 @@ def show_images(images, title_texts):
 mnist_dataloader = MnistDataloader(training_images_filepath, training_labels_filepath, test_images_filepath, test_labels_filepath)
 (x_train, y_train), (x_test, y_test) = mnist_dataloader.load_data()
 
-#
+x_train = x_train
 # Show some random training and test images 
 #
 images_2_show = []
